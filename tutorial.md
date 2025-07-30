@@ -70,7 +70,9 @@ cat cowsaid | singularity exec lolcow_latest.sif cowsay -n
 ```
 
 ### pipe things into another command inside of container:
-$ singularity exec lolcow_latest.sif sh -c "fortune | cowsay | lolcat"
+```bash
+singularity exec lolcow_latest.sif sh -c "fortune | cowsay | lolcat"
+```
 
 Why the trouble of sh -c?
 
