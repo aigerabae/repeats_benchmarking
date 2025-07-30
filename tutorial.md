@@ -91,3 +91,11 @@ Let’s break it down:
 - sh -c "..." – Start a new shell inside the container.
 
 - "fortune | cowsay | lolcat" – Run this entire pipeline inside that shell.
+
+### running RepearExplorer using singulairty:
+```bash
+mkdir working_dir && cd working_dir
+# get test data - fasta file with paired reads in interlaced format
+wget https://bitbucket.org/petrnovak/repex_tarean/raw/devel/test_data/LAS_paired_10k.fas
+singularity exec --bind ${PWD}:/data/ shub://repeatexplorer/repex_tarean seqclust -p -v /data/re_output /data/LAS_paired_10k.fas
+```
