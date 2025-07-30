@@ -86,6 +86,8 @@ To make all commands run inside the container, you need to:
 
 Let’s break it down:
 
-singularity exec lolcow_latest.sif – Run something inside the container.
-sh -c "..." – Start a new shell inside the container.
-"fortune | cowsay | lolcat" – Run this entire pipeline inside that shell.
+- singularity exec lolcow_latest.sif – Run something inside the container.
+
+- sh -c "..." – Start a new shell inside the container.
+
+- "fortune | cowsay | lolcat" – Run this entire pipeline inside that shell.
