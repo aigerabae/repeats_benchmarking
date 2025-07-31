@@ -116,3 +116,11 @@ singularity exec --bind ${PWD}:/data/ repex_tarean.sif seqclust -v /data/re_outp
 Notes:
 - RepeatExplorer fails to work on .txt file with valid fasta format
 ```
+
+To do:
+find a way to compare RN and RepeatExplorer given 1 only allows raw reads and another only assembled reads
+
+RepeatExplorer [2013] - only raw reads
+RepeatModeler - only assembled reads
+RepeatScout [2005] - faster than RECON
+RECON - old tool, doesn't exist in Singularity
