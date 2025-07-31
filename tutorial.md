@@ -99,3 +99,20 @@ mkdir working_dir && cd working_dir
 wget https://bitbucket.org/petrnovak/repex_tarean/raw/devel/test_data/LAS_paired_10k.fas
 singularity exec --bind ${PWD}:/data/ shub://repeatexplorer/repex_tarean seqclust -p -v /data/re_output /data/LAS_paired_10k.fas
 ```
+
+Running custom file:
+```bash
+cd /home/aygera/biostar/RN/repeats_benchmarking/Test
+mkdir working_dir && cd working_dir
+singularity exec --bind ${PWD}:/data/ repex_tarean.sif seqclust -v /data/re_output /data/13.txt
+singularity exec --bind ${PWD}:/data/ repex_tarean.sif seqclust -v /data/re_output /data/14.txt
+singularity exec --bind ${PWD}:/data/ repex_tarean.sif seqclust -v /data/re_output /data/NC_037455.txt
+singularity exec --bind ${PWD}:/data/ repex_tarean.sif seqclust -v /data/re_output /data/NW_026063317.txt
+
+singularity exec --bind ${PWD}:/data/ repex_tarean.sif seqclust -v /data/re_output /data/only1000.txt
+
+
+
+Notes:
+- RepeatExplorer fails to work on .txt file with valid fasta format
+```
