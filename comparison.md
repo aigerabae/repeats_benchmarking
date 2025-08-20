@@ -41,13 +41,12 @@ Here’s a comprehensive comparison between **RepeatModeler** and **RepeatExplor
 
 ## 🧪 ADDITIONAL FUNCTIONS
 
-| Function                              | **RepeatModeler**               | **RepeatExplorer**                                        |   |       |   |       |
-| ------------------------------------- | ------------------------------- | --------------------------------------------------------- | - | ----- | - | ----- |
-| **Integration with RepeatMasker**     | Full integration                | Not directly integrated, but outputs compatible sequences |   |       |   |       |
-| **Tandem repeat annotation (TAREAN)** | ❌ Not available                 | ✅ Yes, unique strength                                    |   |       |   |       |
-| **LTR structure detection**           | Partial (via LTRHarvest in RM2) | Yes, built-in LTR detection with PBS check                |   |       |   |       |
-| **Paired-read coherence (P index)**   | ❌                               | ✅ Yes                                                     |   |       |   |       |
-| \*\*Graph analysis (C index,          | V                               | ,                                                         | E | )\*\* | ❌ | ✅ Yes |
+| Function                              | **RepeatModeler**               | **RepeatExplorer**                                        |   
+| ------------------------------------- | ------------------------------- | --------------------------------------------------------- | 
+| **Integration with RepeatMasker**     | Full integration                | Not directly integrated, but outputs compatible sequences |   
+| **Tandem repeat annotation (TAREAN)** | ❌ Not available                 | ✅ Yes, unique strength                                    |   
+| **LTR structure detection**           | Partial (via LTRHarvest in RM2) | Yes, built-in LTR detection with PBS check                |   
+| **Paired-read coherence (P index)**   | ❌                               | ✅ Yes                                                     |   
 
 ---
 
