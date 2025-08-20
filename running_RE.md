@@ -8,6 +8,7 @@ Reads should be of uniform length (optimal size range is 100-200 nt)
 and the number of analyzed reads should represent less than 1x genome equivalent (genome coverage of 0.01 - 0.50 x is recommended). 
 Reads should be quality-filtered (recommended filtering : quality score >=10 over 95% of bases and no Ns allowed)
 and only complete read pairs should be submitted for analysis. 
+When paired reads are used, input data must be interlaced format as fasta file
 
 To do:
 find a way to compare RN and RepeatExplorer given 1 only allows raw reads and another only assembled reads
