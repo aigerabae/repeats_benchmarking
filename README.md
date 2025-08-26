@@ -6,10 +6,10 @@ In the mid 1960's scientists discovered that many genomes contain stretches of h
 - Tandem Repeats - Typically found at the centromeres and telomeres of chromosomes these are duplications of more complex 100-200 base sequences.
 - Segmental Duplications - Large blocks of 10-300 kilobases which are that have been copied to another region of the genome.
 - Interspersed Repeats
-        - Processed Pseudogenes, Retrotranscripts, SINES - Non-functional copies of RNA genes which have been reintegrated into the genome with the assitance of a reverse transcriptase.
-        - DNA Transposons -
-        - Retrovirus Retrotransposons -
-        - Non-Retrovirus Retrotransposons ( LINES ) -
+  * Processed Pseudogenes, Retrotranscripts, SINES - Non-functional copies of RNA genes which have been reintegrated into the genome with the assitance of a reverse transcriptase.
+  * DNA Transposons -
+  * Retrovirus Retrotransposons -
+  * Non-Retrovirus Retrotransposons ( LINES ) -
 
 Currently up to 50% of the human genome is repetitive in nature and as improvements are made in detection methods this number is expected to increase.
 
