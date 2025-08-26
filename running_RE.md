@@ -41,3 +41,6 @@ Now need to:
 3) understand software to calculate efficiency (if it's necesary)
 4) choose software to do assembly to compare to RN software
 5) calculate coverage and accuracy
+
+Notes:
+- has a lot of dependencies, so best run with Singularity container. Makes installation process harder
