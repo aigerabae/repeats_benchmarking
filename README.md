@@ -2,14 +2,15 @@ This highlight the work I did to do a benchmarking test on existing software to 
 -----
 In the mid 1960's scientists discovered that many genomes contain stretches of highly repetitive DNA sequences ( see Reassociation Kinetics Experiments, and C-Value Paradox ). These sequences were later characterized and placed into five categories:
 
-Simple Repeats - Duplications of simple sets of DNA bases (typically 1-5bp) such as A, CA, CGG etc.
-Tandem Repeats - Typically found at the centromeres and telomeres of chromosomes these are duplications of more complex 100-200 base sequences.
-Segmental Duplications - Large blocks of 10-300 kilobases which are that have been copied to another region of the genome.
-Interspersed Repeats
-Processed Pseudogenes, Retrotranscripts, SINES - Non-functional copies of RNA genes which have been reintegrated into the genome with the assitance of a reverse transcriptase.
-DNA Transposons -
-Retrovirus Retrotransposons -
-Non-Retrovirus Retrotransposons ( LINES ) -
+- Simple Repeats - Duplications of simple sets of DNA bases (typically 1-5bp) such as A, CA, CGG etc.
+- Tandem Repeats - Typically found at the centromeres and telomeres of chromosomes these are duplications of more complex 100-200 base sequences.
+- Segmental Duplications - Large blocks of 10-300 kilobases which are that have been copied to another region of the genome.
+- Interspersed Repeats
+        - Processed Pseudogenes, Retrotranscripts, SINES - Non-functional copies of RNA genes which have been reintegrated into the genome with the assitance of a reverse transcriptase.
+        - DNA Transposons -
+        - Retrovirus Retrotransposons -
+        - Non-Retrovirus Retrotransposons ( LINES ) -
+
 Currently up to 50% of the human genome is repetitive in nature and as improvements are made in detection methods this number is expected to increase.
 
 -----
