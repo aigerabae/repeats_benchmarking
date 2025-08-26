@@ -28,6 +28,3 @@ singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif BuildDatabase -nam
 singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatModeler -database genome1 --threads 20
 
 Finished running in 4 minutes (even though I ran it after I intiialized RepeatExplorer, and it finished earlier). Saved results into a folder with unique name so different runs wouldn't get intermixed. Accepst assembled reads, Doesn't require a specific extension.
-
-
-
