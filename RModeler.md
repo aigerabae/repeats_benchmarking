@@ -1,5 +1,7 @@
 RepeatModeler is a pipeline for automated de novo identification of TEs that employs two distinct discovery algorithms, RepeatScout (32) and RECON (33), followed by consensus building and classification steps. In addition, RepeatModeler2 now includes the LTRharvest (30) and LTR_retriever (34) tools. Our tool takes advantage of the unique strengths of each approach as well as providing a tractable solution to analyzing large datasets such as whole-genome assemblies. 
 
+RepeatModeler is a de novo repeat finder
+
 -----
 The following software is included in the Dfam TE Tools container (version 1.93):
 
