@@ -44,3 +44,7 @@ Now need to:
 
 Notes:
 - has a lot of dependencies, so best run with Singularity container. Makes installation process harder
+
+
+Citation:
+Petr Novák, Pavel Neumann, Jiří Pech, Jaroslav Steinhaisl, Jiří Macas, RepeatExplorer: a Galaxy-based web server for genome-wide characterization of eukaryotic repetitive elements from next-generation sequence reads, Bioinformatics, Volume 29, Issue 6, March 2013, Pages 792–793, https://doi.org/10.1093/bioinformatics/btt054
