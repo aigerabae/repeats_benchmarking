@@ -14,8 +14,8 @@ Currently waiting for the files to download. After, need to choose which I will 
   $files{'hg19'}{'TRF'} = 'chromTrf.tar.gz';
   $files{'hg19'}{'GEN'} = 'ensGene.txt.gz';
 
-perl ../tools/Garlic-master/bin/createModel.pl -m myOrg -f myOrg.fa -r RM.out -t TRF.out -g Genes.table
-
+perl ../tools/Garlic-master/bin/createModel.pl -m hg19_chr1 -f chr1.fa -r hg19.chromOut/1/chr1.fa.out -t  -g Genes.table
+????
 CITATION
 
 Realistic artificial DNA sequences as negative controls for computational genomics.
