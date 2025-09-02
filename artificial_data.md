@@ -26,6 +26,7 @@ perl ../tools/Garlic-master/bin/createModel.pl -m hg19_chr1 -f ./seqs_for_model/
 
 Im not sure if this works even because it needs a repbase consensus and i cant download it. Let's try to do it on real hg19 sequences masked with RepeatMasker and obtain false positives, false negatives, true pisitive and true negatives that way
 
+Update! I found a small embl repbase file that has library of repeats for Dfam. Not sure if that's what it asked for but still. Might give it a try
 CITATION
 
 Realistic artificial DNA sequences as negative controls for computational genomics.
