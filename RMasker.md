@@ -6,3 +6,17 @@ Sequence comparisons in RepeatMasker are performed by the program cross_match, a
 Repeatmasker relies on evidence or pre-determined repeat libraries for organisms
 
 It is used to mask repeats in canonical human assemblies like hg19
+
+To download dfam library:
+```bash
+curl -s https://www.dfam.org/releases/current/families/FamDB/ | \
+grep -oP 'href="\K[^"]+' | \
+grep -v '/$' | \
+sed 's|^|https://www.dfam.org/releases/current/families/FamDB/|' | \
+while read url; do
+  filename=$(basename "$url")
+  if [ ! -f "$filename" ]; then
+    echo "$url"
+  fi
+done | xargs -n 1 -P 10 wget -c
+```
