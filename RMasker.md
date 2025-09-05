@@ -7,6 +7,14 @@ Repeatmasker relies on evidence or pre-determined repeat libraries for organisms
 
 It is used to mask repeats in canonical human assemblies like hg19
 
+Prerequisites
+- Unix system with perl 5.8.0 or higher installed ✅
+- Python 3 and the h5py python library. ✅
+RMBlast ( NCBI Blast modified for use with RepeatMasker/RepeatModeler ) please go to our download page: http://www.repeatmasker.org/rmblast. It is highly recommended to use 2.13.0 or higher.
+For ABBlast/WUBlast go to [ NOTE: Rights to BLAST 2.0 (WU-BLAST) have been acquired by Advanced Biocomputing, LLC. http://blast.advbiocomp.com/licensing/ RepeatMasker 3.2.8 and above fully support both variants ]
+TRF - Tandem Repeat Finder, G. Benson et al. ✅ - downloaded, not installed
+Dfam Repeat Database ✅
+
 To download dfam library:
 ```bash
 curl -s https://www.dfam.org/releases/current/families/FamDB/ | \
@@ -20,3 +28,10 @@ while read url; do
   fi
 done | xargs -n 1 -P 10 wget -c
 ```
+
+I saved all dfam libraries in tar.gz file just in case and started unzipping them separately. It's still running. I put the unzipped folder in the Libraries/famdb folder (replacing its original content). Once unzipping it is done installation of RepeatMasker should be successful
+
+For installation it asks
+- folder with fdam library (finds automatically)
+- TRF executable (if it doesn't see it need to chmod +X it)
+- Rmblast address (specifically in the bin of it)
