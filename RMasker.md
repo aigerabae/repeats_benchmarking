@@ -31,7 +31,18 @@ done | xargs -n 1 -P 10 wget -c
 
 I saved all dfam libraries in tar.gz file just in case and started unzipping them separately. It's still running. I put the unzipped folder in the Libraries/famdb folder (replacing its original content). Once unzipping it is done installation of RepeatMasker should be successful
 
+In RepeatMasker directory (inside RepeatMasker root rectory which I created and which contains other prerequisites)
+```bash
+perl ./configure
+```
+
 For installation it asks
 - folder with fdam library (finds automatically)
 - TRF executable (if it doesn't see it need to chmod +X it)
 - Rmblast address (specifically in the bin of it)
+
+After I did that it should work fine. I added it to path. Let's test:
+```bash
+RepeatMasker 13.txt
+```
+produced some output. yay!
