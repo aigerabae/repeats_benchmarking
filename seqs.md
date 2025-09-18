@@ -1,3 +1,4 @@
+### chapter 1: humans
 https://www.ncbi.nlm.nih.gov/bioproject/PRJNA31257
 
 I will be using chromosome 21 (the shortest human chromosome). I will attempt to download both assembled and unassembled versions of the same chromosome
@@ -16,3 +17,21 @@ But the raw reads are not what i wanted them to be. they are short and small.
 This is an old Sanger sequencing dataset (not modern NGS) from the Human Genome Project, stored in SRA. It contains just 118 reads totaling ~95k bases sequenced on an ABI 310 capillary machine by WUGSC. It’s very small and mostly archival — useful for historical reference, not for actual large-scale analysis.
 
 From what I've read I might want to download the whole dataset and then get the fraction of reads that correspond to chromosome 21. Might need bam file for that but I fear it might be too heavy
+Nevermind. this weughs 150 gb. 
+I wasnt even able to find raw reads for the reference genome but for a study that assembled a WGS of a chinese man the assembled version was same in assembled size
+---
+### chapter 2: drosophila
+I downloaded drosophila fna.gz file from https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_042606445.1/
+Now need raw files:
+
+I decided to find the one with one run for simplicity:
+One issue with it is that its not paired end reads which RepeatExplorer prefers. also Reads are too long and variable in size.
+
+Coverage is far too high (though you could subsample).
+Raw reads (8.6 gb):
+https://www.ncbi.nlm.nih.gov/sra/SRX24990792[accn]
+
+Assembly:
+https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_042606445.1/
+
+Might try finding illumina reads:
