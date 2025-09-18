@@ -1,4 +1,4 @@
-Here’s a comprehensive comparison between **RepeatModeler** and **RepeatExplorer**, based on your documentation and standard bioinformatics knowledge:
+Here’s a comprehensive comparison between **RepeatModeler** and **RepeatExplorer**, based on documentation and standard bioinformatics knowledge:
 
 ---
 
