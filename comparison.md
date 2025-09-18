@@ -111,5 +111,3 @@ Here’s a comprehensive comparison between **RepeatModeler** and **RepeatExplor
 | You want **graph-based visualization**       | ✅ RepeatExplorer          |
 
 ---
-
-Let me know if you’d like a **flowchart or cheat sheet PDF** of this comparison!
