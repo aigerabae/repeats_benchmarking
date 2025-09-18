@@ -13,5 +13,6 @@ The human genome assembly submitted by the GRC is available in GenBank under acc
 I downloaded assembled version from https://www.ncbi.nlm.nih.gov/nuccore/CM000683.2?report=fasta
 
 But the raw reads are not what i wanted them to be. they are short and small. 
+This is an old Sanger sequencing dataset (not modern NGS) from the Human Genome Project, stored in SRA. It contains just 118 reads totaling ~95k bases sequenced on an ABI 310 capillary machine by WUGSC. It’s very small and mostly archival — useful for historical reference, not for actual large-scale analysis.
 
 From what I've read I might want to download the whole dataset and then get the fraction of reads that correspond to chromosome 21. Might need bam file for that but I fear it might be too heavy
