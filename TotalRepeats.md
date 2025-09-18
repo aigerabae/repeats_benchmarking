@@ -117,11 +117,13 @@ Strand
 
 Let's apply before sequence on after and see the differences.
 What I noted:
-- the before file might have small letters or capital letter, and have newline characters. he .msk output file is on a single line and has only lower case letters
+- the before file might have newline characters. The .msk output file is on a single line
 
+Input:
+- fasta file with assembled 1 or more sequences; doesn't matter if its on 1 line or on multiple lines (eg 13.txt)
 
-
-Cool facts I found while reading about repeats:
--  For instance, about 50% of the human genome consists of repeats5, while roughly 4% of human genes harbor transposable elements in their protein-coding regions6. Because many of these repeats (~89.5%) are located within introns, they have been erroneously assumed to be non-functional7. However, increasing research indicates the significant impacts that repeats in coding and noncoding regions can have on evolution, gene expression regulation, and variation induction8,9,10. For example, when repeats are present in the coding region they get translated canonically. Not only can non-coding repeats be translated by a non-canonical mechanism11, but even the telomeric repeat RNAs can get translated12. Moreover, recent studies have shown that such repeats are closely related to a variety of diseases, such as genetic disorders (e.g., Hemophilia), neurological diseases (e.g., poly-Q diseases), and cancers (e.g., endometrial, stomach and colorectal cancers)
- - In genetics, tandem repeats occur in DNA when a pattern of one or more nucleotides is repeated and the repetitions are directly adjacent to each other, e.g. ATTCG ATTCG ATTCG, in which the sequence ATTCG is repeated three times.[1]
-
+Output:
+- masked sequences (13.txt.msk)
+- GFF-format annotations (13.txt_1.gff)
+- graphical representations of repeat architecture (13.txt.png)
+  
