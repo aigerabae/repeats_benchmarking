@@ -123,3 +123,9 @@ Tasks:
 - write script to compare output of RepeatMasker with other software
 - Describe additional features of each software
 - Record time it takes for each software to run
+
+
+ool facts I found while reading about repeats:
+
+For instance, about 50% of the human genome consists of repeats, while roughly 4% of human genes harbor transposable elements in their protein-coding regions. Because many of these repeats (~89.5%) are located within introns, they have been erroneously assumed to be non-functional. However, increasing research indicates the significant impacts that repeats in coding and noncoding regions can have on evolution, gene expression regulation, and variation induction. For example, when repeats are present in the coding region they get translated canonically. Not only can non-coding repeats be translated by a non-canonical mechanism, but even the telomeric repeat RNAs can get translated. Moreover, recent studies have shown that such repeats are closely related to a variety of diseases, such as genetic disorders (e.g., Hemophilia), neurological diseases (e.g., poly-Q diseases), and cancers (e.g., endometrial, stomach and colorectal cancers)
+In genetics, tandem repeats occur in DNA when a pattern of one or more nucleotides is repeated and the repetitions are directly adjacent to each other, e.g. ATTCG ATTCG ATTCG, in which the sequence ATTCG is repeated three times.
