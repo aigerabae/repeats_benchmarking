@@ -31,3 +31,6 @@ singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatModeler -dat
 -----
 Finished running in 4 minutes (even though I ran it after I intiialized RepeatExplorer, and it finished earlier). Saved results into a folder with unique name so different runs wouldn't get intermixed. Accepst assembled reads, Doesn't require a specific extension.
 
+Trying it in drosophila 221 scaffolds:
+singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif BuildDatabase -name fly1 GCA_042606445.1_ASM4260644v1_genomic.fna
+singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatModeler -database fly1 --threads 20
