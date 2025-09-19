@@ -127,3 +127,6 @@ Output:
 - GFF-format annotations (13.txt_1.gff)
 - graphical representations of repeat architecture (13.txt.png)
   
+### Chapter 2: drosophila:
+java -jar TotalRepeats.jar ../seqs/GCA_042606445.1_ASM4260644v1_genomic.fna 
+This generates 221 contigs and so 221 separate files. If i decide to use that dataset i would have to find  way to combine those results otgether. or i coudl use a diifferent dataset with better assembly
