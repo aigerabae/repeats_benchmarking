@@ -44,3 +44,14 @@ fastq-dump --outdir ./ --gzip --skip-technical --readids --read-filter pass --du
 Nevermind. Thq quality of assembly is subpar and has 211 scaffolds.
 Might want to use a different assembly with better reads but where do i find that?
 Right now i made it run it on modeler, totalrepeats. on totalrepeatsi deleted the results but i will do it again (took about 5 mins) and compare to modeler and then run masker as well (library based identification). the raw data are still downloading
+
+---
+### Chapter 3: Drosophila but different sequences; same strain (A4)
+For unassembled data I will use:
+https://www.ncbi.nlm.nih.gov/sra/SRX24990790[accn]
+prefetch SRX24990790
+fastq-dump --outdir ./ --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 SRX24990790.sra
+
+For assembled I will use
+https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_002300595.1/
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/002/300/595/GCA_002300595.1_Dmel_A4_1.0/GCA_002300595.1_Dmel_A4_1.0_genomic.fna.gz
