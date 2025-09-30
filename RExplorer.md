@@ -1,3 +1,4 @@
+### Chapter 1: What's RepeatExplorer?
 RepeatExplorer2 clustering is a computational pipeline for unsupervised identification of repeats from unassembled sequence reads. 
 The pipeline uses low-pass whole genome sequence reads and performs graph-based clustering. 
 Resulting clusters, representing all types of repeats, are then examined to identify and classify into repeats groups.
@@ -17,6 +18,51 @@ One way:
 2) run TR and RM on assembled, and RE on unassembled (note - QC needed, and paired end reads are optimal)
 
 
+Optimal workflow (example data):
+1) Use Trimmomatic program to remove low quality reads and trim read ends. 
+```bash
+cp /usr/share/trimmomatic/*.fa .
+# Remove first 10 nt, min length must be 90
+TrimmomaticPE -phred33 SRR089356_1.fastq.gz SRR089356_2.fastq.gz \
+ SRR089356_1_clean.fastq.gz SRR089356_1_unpaired.fastq.gz \
+ SRR089356_2_clean.fastq.gz SRR089356_2_unpaired.fastq.gz \
+ ILLUMINACLIP:NexteraPE-PE.fa:2:40:15 SLIDINGWINDOW:4:10 CROP:100 HEADCROP:10
+MINLEN:90
+# Check statistics of fastq files:
+seqkit stats *fastq.gz
+# Run fastqc on clean data:
+fastqc *clean*.fastq.gz
+```
+
+2) Sample to required coverage:
+```bash
+# Paired end read sampling:
+seqtk sample -s 10 SRR089356_1_clean.fastq.gz 5000 >
+SRR089356_1_clean_sample.fastq
+seqtk sample -s 10 SRR089356_2_clean.fastq.gz 5000 >
+SRR089356_2_clean_sample.fastq
+```
+
+3) Interleaved pairs into single file:
+```bash
+# Make interleaved FASTQ
+seqtk mergepe SRR089356_1_clean_sample.fastq SRR089356_2_clean_sample.fastq
+> SRR089356_clean_sample_merged.fastq
+# Convert to FASTA
+seqtk seq -A SRR089356_clean_sample_merged.fastq >
+SRR089356_clean_sample_merged.fasta
+```
+
+4) Run RepeatExplorer with default settings:
+```bash
+# Run clustering with default settings
+cd ~/repeatexplorer
+singularity exec -e --bind ${PWD}:/data/ repex_tarean seqclust -p -v
+/data/re_output_run1 /data/single_species/SRR089356_clean_sample_merged.fasta
+```
+
+---
+### Chapter 2: testing on SRA data (random)
 First run on raw data downloaded from SRA (no QC, etc.)
 ```bash
 prefetch SRX29907886
@@ -50,4 +96,6 @@ Citation:
 Petr Novák, Pavel Neumann, Jiří Pech, Jaroslav Steinhaisl, Jiří Macas, RepeatExplorer: a Galaxy-based web server for genome-wide characterization of eukaryotic repetitive elements from next-generation sequence reads, Bioinformatics, Volume 29, Issue 6, March 2013, Pages 792–793, https://doi.org/10.1093/bioinformatics/btt054
 -----
 
-Optimal workflow:
+---
+### Chapter 2: Drosophila Melanogaster A4:
+1) 
