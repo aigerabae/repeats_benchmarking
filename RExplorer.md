@@ -108,11 +108,42 @@ trimmomatic PE -threads 8 -phred33 \
   R2_clean.fastq.gz R2_unpaired.fastq.gz \
   ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True \
   LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 CROP:120 MINLEN:120
- 
+```
+
+```output
+ILLUMINACLIP: Using adapter file from Trimmomatic installation folder: /home/aygera/miniconda3/envs/bioinfo/share/trimmomatic-0.40-0/adapters/TruSeq3-PE.fa
+Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+ILLUMINACLIP: Using 1 prefix pairs, 0 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Input Read Pairs: 87332806 Both Surviving: 77255629 (88.46%) Forward Only Surviving: 4906155 (5.62%) Reverse Only Surviving: 2485299 (2.85%) Dropped: 2685723 (3.08%)
+TrimmomaticPE: Completed successfully
+```
 
 # Check statistics of fastq files:
 seqkit stats *fastq.gz
 # Run fastqc on clean data:
 fastqc *clean*.fastq.gz
+
+```output
+processed files:  6 / 6 [======================================] ETA: 0s. done
+file                    format  type    num_seqs         sum_len  min_len  avg_len  max_len
+R1_clean.fastq.gz       FASTQ   DNA   77,255,629   9,270,675,480      120      120      120
+R1_unpaired.fastq.gz    FASTQ   DNA    4,906,155     588,738,600      120      120      120
+R2_clean.fastq.gz       FASTQ   DNA   77,255,629   9,270,675,480      120      120      120
+R2_unpaired.fastq.gz    FASTQ   DNA    2,485,299     298,235,880      120      120      120
+SRR29479670_1.fastq.gz  FASTQ   DNA   87,332,806  13,099,920,900      150      150      150
+SRR29479670_2.fastq.gz  FASTQ   DNA   87,332,806  13,099,920,900      150      150      150
 ```
-2) 
+ ??? interleave first or is sampling enough with the same seed???
+
+ 
+2) interleave paired end reads
+seqtk mergepe SRR089356_1_clean.fastq.gz SRR089356_2_clean.fastq.gz > merged.fastq
+
+2) Sample to required coverage:
+```bash
+# Paired end read sampling:
+seqtk sample -s 10 SRR089356_1_clean.fastq.gz 5000 >
+SRR089356_1_clean_sample.fastq
+seqtk sample -s 10 SRR089356_2_clean.fastq.gz 5000 >
+SRR089356_2_clean_sample.fastq
+```
