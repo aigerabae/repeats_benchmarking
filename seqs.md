@@ -49,9 +49,51 @@ Right now i made it run it on modeler, totalrepeats. on totalrepeatsi deleted th
 ### Chapter 3: Drosophila but different sequences; same strain (A4)
 For unassembled data I will use:
 https://www.ncbi.nlm.nih.gov/sra/SRX24990790[accn]
+```bash
 prefetch SRX24990790
-fastq-dump --outdir ./ --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 SRX24990790.sra
+fastq-dump --outdir ./ --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 SRX24990790/SRX24990790.sra
+```
 
 For assembled I will use
 https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_002300595.1/
+```bash
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/002/300/595/GCA_002300595.1_Dmel_A4_1.0/GCA_002300595.1_Dmel_A4_1.0_genomic.fna.gz
+gunzip -c GCA_002300595.1_Dmel_A4_1.0_genomic.fna.gz > a4_assembly.fa
+```
+
+Assembled sequence already has repeats soft masked with lower case letters:
+Masking of fasta sequences in genomic.fna.gz files
+--------------------------------------------------
+Repetitive sequences in eukaryotic genome assembly sequence files, as 
+identified by WindowMasker (Morgulis A, Gertz EM, Schaffer AA, Agarwala R. 
+2006. Bioinformatics 22:134-41), have been masked to lower-case:
+
+```info
+Alignment programs typically have parameters that control whether the program 
+will ignore lower-case masking, treat it as soft-masking (i.e. only for finding 
+initial matches) or treat it as hard-masking. By default NCBI BLAST will ignore 
+lower-case masking but this can be changed by adding options to the blastn 
+command-line.
+To have blastn treat lower-case masking in the query sequence as soft-masking 
+add:
+     -lcase_masking
+To have blastn treat lower-case masking in the query sequence as hard-masking 
+add:
+     -lcase_masking -soft_masking false
+
+Alternatively, commands such as the following can be used to generate either 
+unmasked sequence or sequence masked with Ns.
+
+Example commands to remove lower-case masking:
+perl -pe '/^[^>]/ and $_=uc' genomic.fna > genomic.unmasked.fna
+  -or-
+awk '{if(/^[^>]/)$0=toupper($0);print $0}' genomic.fna > genomic.unmasked.fna
+
+Example commands to convert lower-case masking to masking with Ns (hard-masked):
+perl -pe '/^[^>]/ and $_=~ s/[a-z]/N/g' genomic.fna > genomic.N-masked.fna
+  -or-
+awk '{if(/^[^>]/)gsub(/[a-z]/,"N");print $0}' genomic.fna > genomic.N-masked.fna
+
+
+*_cds_from_genomic.fna.gz & *_rna_from_genomic.fna.gz
+```
