@@ -100,6 +100,7 @@ Petr Novák, Pavel Neumann, Jiří Pech, Jaroslav Steinhaisl, Jiří Macas, Repe
 ### Chapter 2: Drosophila Melanogaster A4:
 1) using downloaded fastq paired end reads (fastg.gz) I will first do QC:
 
+```bash
 # I downloaded Illumina adapter sequences with trimmomatic 0.39. I put it into raw_QC folder and copied fastq.gz files in there as well. Since I used conda installation of trimmomatic it used adapters that come with the software from conda and downloading adapters was not necesary
 trimmomatic PE -threads 8 -phred33 \
   SRR29479670_1.fastq.gz SRR29479670_2.fastq.gz \
@@ -113,4 +114,5 @@ trimmomatic PE -threads 8 -phred33 \
 seqkit stats *fastq.gz
 # Run fastqc on clean data:
 fastqc *clean*.fastq.gz
+```
 2) 
