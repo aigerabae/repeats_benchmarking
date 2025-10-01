@@ -18,7 +18,7 @@ One way:
 2) run TR and RM on assembled, and RE on unassembled (note - QC needed, and paired end reads are optimal)
 
 
-Optimal workflow (example data):
+Optimal workflow (example data from practical http://repeatexplorer.org/repeatexplorer/wp-content/Manual_for_practical_training_2023.pdf):
 1) Use Trimmomatic program to remove low quality reads and trim read ends. 
 ```bash
 cp /usr/share/trimmomatic/*.fa .
@@ -98,4 +98,19 @@ Petr Novák, Pavel Neumann, Jiří Pech, Jaroslav Steinhaisl, Jiří Macas, Repe
 
 ---
 ### Chapter 2: Drosophila Melanogaster A4:
-1) 
+1) using downloaded fastq paired end reads (fastg.gz) I will first do QC:
+
+# I downloaded Illumina adapter sequences with trimmomatic 0.39. I put it into raw_QC folder and copied fastq.gz files in there as well. Since I used conda installation of trimmomatic it used adapters that come with the software from conda and downloading adapters was not necesary
+trimmomatic PE -threads 8 -phred33 \
+  SRR29479670_1.fastq.gz SRR29479670_2.fastq.gz \
+  R1_clean.fastq.gz R1_unpaired.fastq.gz \
+  R2_clean.fastq.gz R2_unpaired.fastq.gz \
+  ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True \
+  LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 CROP:120 MINLEN:120
+ 
+
+# Check statistics of fastq files:
+seqkit stats *fastq.gz
+# Run fastqc on clean data:
+fastqc *clean*.fastq.gz
+2) 
