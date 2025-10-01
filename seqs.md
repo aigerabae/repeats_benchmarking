@@ -53,7 +53,7 @@ https://www.ncbi.nlm.nih.gov/sra/SRX24990790[accn]
 prefetch SRX24990790
 # takes too long: fastq-dump --outdir ./ --gzip --skip-technical --readids --read-filter pass --dumpbase --split-3 SRX24990790/SRX24990790.sra
 fasterq-dump SRX24990790/SRX24990790.sra -O ./ --skip-technical --split-3 -e 32
-gzip *.fastq
+pigz *.fastq
 ```
 
 For assembled I will use
