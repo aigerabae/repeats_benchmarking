@@ -98,7 +98,7 @@ Petr Novák, Pavel Neumann, Jiří Pech, Jaroslav Steinhaisl, Jiří Macas, Repe
 
 ---
 ### Chapter 2: Drosophila Melanogaster A4:
-1) using downloaded fastq paired end reads (fastg.gz) I will first do QC:
+1) using downloaded fastq paired end reads (fastg.gz) trim adapters and make length 120 bp:
 
 ```bash
 # I downloaded Illumina adapter sequences with trimmomatic 0.39. I put it into raw_QC folder and copied fastq.gz files in there as well. Since I used conda installation of trimmomatic it used adapters that come with the software from conda and downloading adapters was not necesary
@@ -134,15 +134,18 @@ SRR29479670_1.fastq.gz  FASTQ   DNA   87,332,806  13,099,920,900      150      1
 SRR29479670_2.fastq.gz  FASTQ   DNA   87,332,806  13,099,920,900      150      150      150
 ```
 
- 
-2) interleave paired end reads
-seqtk mergepe SRR089356_1_clean.fastq.gz SRR089356_2_clean.fastq.gz > merged.fastq
-
-2) Sample to required coverage:
+2) Sub-sample to required coverage:
 ```bash
 # Paired end read sampling:
-seqtk sample -s 10 SRR089356_1_clean.fastq.gz 5000 >
-SRR089356_1_clean_sample.fastq
-seqtk sample -s 10 SRR089356_2_clean.fastq.gz 5000 >
-SRR089356_2_clean_sample.fastq
+seqtk sample -s 10 R1_clean.fastq.gz 250000 > R1_clean_sample.fastq
+seqtk sample -s 10 R2_clean.fastq.gz 250000 > R2_clean_sample.fastq
 ```
+
+3) interleave paired end reads and convert to fasta
+seqtk mergepe R1_clean_sample.fastq R2_clean_sample.fastq > merged.fastq
+seqtk seq -A merged.fastq > merged.fasta
+
+4) run RepeatExplorer
+singularity exec -e --bind ${PWD}:/data/ repex_tarean.sif seqclust -p -v /data/re_output /data/merged.fasta -c 24
+
+Might want to run it overnight and in the daytime run faster ones
