@@ -39,8 +39,8 @@ perl ./configure
 
 For installation it asks
 - folder with fdam library (finds automatically)
-- TRF executable (if it doesn't see it need to chmod +X it)
-- Rmblast address (specifically in the bin of it)
+- TRF executable (if it doesn't see it need to chmod +X it) - /media/aygera/external_disk/biostar/RN/repeats_benchmarking/tools/RepeatMasker/trf409.legacylinux64
+- Rmblast address (specifically in the bin of it) - /media/aygera/external_disk/biostar/RN/repeats_benchmarking/tools/RepeatMasker/rmblast-2.14.1+-x64-linux/rmblast-2.14.1/bin/
 
 After I did that it should work fine. I added it to path. Let's test:
 ```bash
@@ -48,6 +48,7 @@ RepeatMasker 13.txt
 ```
 produced some output. yay!
 
+For unknown reason doesn't work anymore
 
 ---
 # Chapter 2: Drosophila Melanogaster A4
