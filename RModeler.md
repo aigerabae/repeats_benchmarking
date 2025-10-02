@@ -45,9 +45,11 @@ singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatModeler -dat
 
 
 Setting it up to run consecutively overnight:
+```bash
 cd /media/aygera/external_disk/biostar/RN/repeats_benchmarking/Test_RepeatModeler
 singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatModeler -database fly1 --threads 24  -LTRStruct
 cd /media/aygera/external_disk/biostar/RN/repeats_benchmarking/Test_RepeatExplorer
 singularity exec -e --bind ${PWD}:/data/ repex_tarean.sif seqclust -p -v /data/re_output /data/merged.fasta -c 24
 cd /media/aygera/external_disk/biostar/RN/repeats_benchmarking/Test_RepeatMasker
 RepeatMasker a4_assembly.fna
+```
