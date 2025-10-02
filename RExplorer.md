@@ -133,7 +133,6 @@ R2_unpaired.fastq.gz    FASTQ   DNA    2,485,299     298,235,880      120      1
 SRR29479670_1.fastq.gz  FASTQ   DNA   87,332,806  13,099,920,900      150      150      150
 SRR29479670_2.fastq.gz  FASTQ   DNA   87,332,806  13,099,920,900      150      150      150
 ```
- ??? interleave first or is sampling enough with the same seed???
 
  
 2) interleave paired end reads
