@@ -137,8 +137,8 @@ SRR29479670_2.fastq.gz  FASTQ   DNA   87,332,806  13,099,920,900      150      1
 2) Sub-sample to required coverage:
 ```bash
 # Paired end read sampling:
-seqtk sample -s 10 R1_clean.fastq.gz 250000 > R1_clean_sample.fastq
-seqtk sample -s 10 R2_clean.fastq.gz 250000 > R2_clean_sample.fastq
+seqtk sample -s 10 R1_clean.fastq.gz 300000 > R1_clean_sample.fastq
+seqtk sample -s 10 R2_clean.fastq.gz 300000 > R2_clean_sample.fastq
 ```
 
 3) interleave paired end reads and convert to fasta
