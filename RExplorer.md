@@ -142,10 +142,14 @@ seqtk sample -s 10 R2_clean.fastq.gz 250000 > R2_clean_sample.fastq
 ```
 
 3) interleave paired end reads and convert to fasta
+```bash
 seqtk mergepe R1_clean_sample.fastq R2_clean_sample.fastq > merged.fastq
 seqtk seq -A merged.fastq > merged.fasta
+```
 
 4) run RepeatExplorer
+```bash
 singularity exec -e --bind ${PWD}:/data/ repex_tarean.sif seqclust -p -v /data/re_output /data/merged.fasta -c 24
+```
 
 Might want to run it overnight and in the daytime run faster ones
