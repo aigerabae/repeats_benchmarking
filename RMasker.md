@@ -83,4 +83,4 @@ Get it to run:
 RepeatMasker -species Drosophila_melanogaster -pa 24 -xsmall -gff a4_assembly.fna
 ```
 
-Time: 13:44 to 
+Time: 10 mins
