@@ -48,9 +48,32 @@ RepeatMasker 13.txt
 ```
 produced some output. yay!
 
-For unknown reason doesn't work anymore
 
 ---
 # Chapter 2: Drosophila Melanogaster A4
 After I mask it I will compare the output with info here:
 https://www.repeatmasker.org/species/dm.html
+
+For unknown reason RepeatMasker doesn't work anymore.
+
+I thought I'd try running it via distribution in RepeatModeler:
+```bash
+singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatMasker a4_assembly.fna
+```
+
+But I get this error:
+```error
+Taxon "homo sapiens" is in partition 7 of the current FamDB however,
+this partition is absent.  Please download this file from the original
+source and rerun configure to proceed.
+```
+
+Let's try to fix this problem. 
+# temporary way:
+export PATH=/media/aygera/external_disk/biostar/RN/repeats_benchmarking/tools/RepeatMasker/RepeatMasker:$PATH
+
+# permanent way:
+echo 'export PATH=/media/aygera/external_disk/biostar/RN/repeats_benchmarking/tools/RepeatMasker/RepeatMasker:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+RepeatMasker a4_assembly.fna
