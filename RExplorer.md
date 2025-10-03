@@ -152,4 +152,4 @@ seqtk seq -A merged.fastq > merged.fasta
 singularity exec -e --bind ${PWD}:/data/ repex_tarean.sif seqclust -p -v /data/re_output /data/merged.fasta -c 24
 ```
 
-Might want to run it overnight and in the daytime run faster ones
+This happened to finish in less than hour. Started at 17:45 and finished at 18:33 = 48 mins. But I accidentally used 250.000 reads instead of 300,000. So I might want to rerun it.
