@@ -141,5 +141,13 @@ java -jar TotalRepeats.jar a4_assembly.fna -combine
 
 Time: 203 seconds (3.5 mins)
 
-Using comparison function:
--maskscomp
+Combining masked files into 1:
+```bash
+for f in $(ls a4_assembly.fna_*.msk | sort -V); do
+    cat "$f"
+    echo ""   # add one newline after each file
+done > a4_assembly.fna.msk
+```
+
+I pooled all masks into maskcomp folder and named them appropriately. Using comparison function:
+java -jar TotalRepeats.jar -maskscomp 
