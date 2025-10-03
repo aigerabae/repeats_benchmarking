@@ -1,3 +1,4 @@
+### Chapter 1: Testing
 java -jar TotalRepeats.jar 13.txt 
 ```output
 Current Directory: /media/aygera/external_disk/biostar/RN/repeats_benchmarking/Test_TotalRepeats
@@ -128,5 +129,17 @@ Output:
 - graphical representations of repeat architecture (13.txt.png)
   
 ### Chapter 2: drosophila:
-java -jar TotalRepeats.jar ../seqs/GCA_042606445.1_ASM4260644v1_genomic.fna 
+```bash
+java -jar TotalRepeats.jar ../seqs/GCA_042606445.1_ASM4260644v1_genomic.fna
+```
 This generates 221 contigs and so 221 separate files. If i decide to use that dataset i would have to find  way to combine those results otgether. or i coudl use a diifferent dataset with better assembly
+
+Running on new data:
+```bash
+java -jar TotalRepeats.jar a4_assembly.fna -combine
+```
+
+Time: 203 seconds (3.5 mins)
+
+Using comparison function:
+-maskscomp
