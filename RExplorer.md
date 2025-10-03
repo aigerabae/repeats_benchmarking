@@ -153,3 +153,11 @@ singularity exec -e --bind ${PWD}:/data/ repex_tarean.sif seqclust -p -v /data/r
 ```
 
 This happened to finish in less than hour. Started at 17:45 and finished at 18:33 = 48 mins. But I accidentally used 250.000 reads instead of 300,000. So I might want to rerun it.
+
+Masking sequences with it:
+cat contigs.fasta TAREAN_consensus_rank_*.fasta > custom_repeats_raw.fa
+../../tools/RepeatMasker/RepeatMasker/RepeatMasker  -lib ./custom_repeats_raw.fa -xsmall -gff ./a4_assembly.fna -pa 24
+cd /media/aygera/external_disk/biostar/RN/repeats_benchmarking/Test_WindowMasker/
+windowmasker -mk_counts -in a4_assembly.fna -out a4_counts
+windowmasker -ustat unit_counts -in a4_counts -out a4_masked.msk -outfmt text
+windowmasker -ustat unit_counts -in a4_counts -out a4_masked.msk
