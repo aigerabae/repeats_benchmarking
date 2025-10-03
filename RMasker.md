@@ -69,11 +69,18 @@ source and rerun configure to proceed.
 ```
 
 Let's try to fix this problem. 
+```bash
 # temporary way:
 export PATH=/media/aygera/external_disk/biostar/RN/repeats_benchmarking/tools/RepeatMasker/RepeatMasker:$PATH
 
 # permanent way:
 echo 'export PATH=/media/aygera/external_disk/biostar/RN/repeats_benchmarking/tools/RepeatMasker/RepeatMasker:$PATH' >> ~/.bashrc
 source ~/.bashrc
+```
 
-RepeatMasker a4_assembly.fna
+Get it to run:
+```bash
+RepeatMasker -species Drosophila_melanogaster -pa 24 -xsmall -gff a4_assembly.fna
+```
+
+Time: 13:44 to 
