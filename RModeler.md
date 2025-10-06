@@ -45,3 +45,16 @@ singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatModeler -dat
 #3 help: singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatModeler --help
 ```
 
+Runtime: 07 hours 14 minutes 40 seconds
+Of it LTRPipeline Time: 03:31:00 (hh:mm:ss) Elapsed Time
+The results have been saved to:
+  /media/aygera/external_disk/biostar/RN/repeats_benchmarking/Test_RepeatModeler/
+    fly1-families.fa  - Consensus sequences for each family identified.
+    fly1-families.stk - Seed alignments for each family identified.
+    fly1-rmod.log     - Execution log.  Useful for reproducing results.
+
+
+Masking:
+```bash
+singularity exec --bind ${PWD}:/data/ dfam-tetools-latest.sif RepeatMasker -lib fly1-families.fa -xsmall -gff a4_assembly.fna -pa 24
+```
