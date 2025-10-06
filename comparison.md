@@ -1,113 +1,68 @@
-Here’s a comprehensive comparison between **RepeatModeler** and **RepeatExplorer**, based on documentation and standard bioinformatics knowledge:
+Running benchmarking using maskscomp in TR:
+I pooled all masks into maskcomp folder and named them appropriately. Using comparison function:
+runfiles.txt:
+```text
+tr.msk	rexplorer.msk
+tr.msk	rmasker.msk  
+tr.msk	rmodeler.msk  
+tr.msk  wmasker.msk
+```
 
----
+```bash
+java -jar TotalRepeats.jar runfiles.txt -maskscomp
+```
 
-## 🧩 FUNCTIONALITY
+Checking if names of sequences are the same:
+```bash
+awk '$1 ~ /^>/' tr.msk
+```
 
-| Feature                                   | **RepeatModeler**                                    | **RepeatExplorer**                                                        |
-| ----------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------- |
-| **Goal**                                  | De novo identification and classification of repeats | De novo identification, quantification, and annotation of repeats         |
-| **Repeat types**                          | All repeat families (transposons, satellites, etc.)  | Mainly focused on high-copy repeats, including satellites and LTRs        |
-| **Repeat masking support**                | Yes — integrates with **RepeatMasker**               | **No direct masking**, but produces sequences usable by RepeatMasker      |
-| **Quantification of genome proportion**   | Partial (inferred)                                   | Yes — calculates how much of genome each repeat occupies                  |
-| **Graph-based clustering**                | No                                                   | Yes — unique approach using graph layout of read similarity               |
-| **Satellite-specific detection (TAREAN)** | No                                                   | Yes — specialized module for tandem repeat analysis                       |
-| **Custom repeat database annotation**     | Yes — uses RepeatClassifier, integrates with RepBase | Yes — matches clusters against REXdb, rDNA, and optional custom databases |
+Result of benchmarking using TR maskscomp:
+```text
+Overlapping sequence length (nt): 144,069,582 (144,069,582/144,134,966)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence TotalRepeats: Sequence coverage by repeats = 11.53
+(2) ./rexplorer.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequenc
+(1) Masked (nt): 29,854,361 : 20.72%
+(2) Masked (nt): 34,146,341 : 23.69%
+Overlapping masking (nt): 25,085,742 : 73.47%
+Overlapping coverage at sequence level = 17.41%
+(1) Different mask not overlap (nt): 4,768,619 : 15.97%
+(2) Different mask not overlap (nt): 9,060,599 : 26.53%
+144,069,582	20.72	23.69	73.47	17.41	15.97	26.53
 
----
 
-## 📥 INPUT FORMAT
+Overlapping sequence length (nt): 144,069,582 (144,069,582/144,134,966)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence TotalRepeats: Sequence coverage by repeats = 11.53
+(2) ./rmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequenc
+(1) Masked (nt): 29,854,361 : 20.72%
+(2) Masked (nt): 32,955,566 : 22.86%
+Overlapping masking (nt): 23,631,562 : 71.71%
+Overlapping coverage at sequence level = 16.40%
+(1) Different mask not overlap (nt): 6,222,799 : 20.84%
+(2) Different mask not overlap (nt): 9,324,004 : 28.29%
+144,069,582	20.72	22.86	71.71	16.40	20.84	28.29
 
-| Format               | **RepeatModeler**                                 | **RepeatExplorer**                                           |
-| -------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
-| **Input type**       | Assembled genome in FASTA format                  | Unassembled genomic reads (FASTQ or FASTA)                   |
-| **Genome size**      | Suitable for assembled **draft/finished** genomes | Suitable for **large genome surveys** or unassembled genomes |
-| **Paired-end reads** | Not used                                          | Yes — improves clustering with paired-end reads              |
 
----
+Overlapping sequence length (nt): 144,069,582 (144,069,582/144,134,966)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence TotalRepeats: Sequence coverage by repeats = 11.53
+(2) ./rmodeler.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequenc
+(1) Masked (nt): 29,854,361 : 20.72%
+(2) Masked (nt): 33,968,960 : 23.57%
+Overlapping masking (nt): 24,815,857 : 73.05%
+Overlapping coverage at sequence level = 17.22%
+(1) Different mask not overlap (nt): 5,038,504 : 16.88%
+(2) Different mask not overlap (nt): 9,153,103 : 26.95%
+144,069,582	20.72	23.57	73.05	17.22	16.88	26.95
 
-## 📤 OUTPUT FORMAT
 
-| Output type                    | **RepeatModeler**                 | **RepeatExplorer**                                              |
-| ------------------------------ | --------------------------------- | --------------------------------------------------------------- |
-| **Repeat library**             | FASTA file of consensus sequences | FASTA file of consensus sequences (contigs.fasta, TAREAN ranks) |
-| **Classification**             | Yes — RepeatClassifier            | Yes — similarity hits + annotation                              |
-| **RepeatMasker-ready library** | Yes                               | Indirectly (can export sequences to use with RM)                |
-| **HTML reports**               | No                                | Yes — Interactive cluster and supercluster reports              |
-| **Graph visualization**        | No                                | Yes — detailed read similarity graphs for each cluster          |
-| **Genome proportion table**    | No direct output                  | Yes — CLUSTER\_TABLE.csv and SUPERCLUSTER\_TABLE.csv            |
-
----
-
-## 🧪 ADDITIONAL FUNCTIONS
-
-| Function                              | **RepeatModeler**               | **RepeatExplorer**                                        |   
-| ------------------------------------- | ------------------------------- | --------------------------------------------------------- | 
-| **Integration with RepeatMasker**     | Full integration                | Not directly integrated, but outputs compatible sequences |   
-| **Tandem repeat annotation (TAREAN)** | ❌ Not available                 | ✅ Yes, unique strength                                    |   
-| **LTR structure detection**           | Partial (via LTRHarvest in RM2) | Yes, built-in LTR detection with PBS check                |   
-| **Paired-read coherence (P index)**   | ❌                               | ✅ Yes                                                     |   
-
----
-
-## 🏛 YEAR OF CREATION & NOTABLE POINTS
-
-| Feature                 | **RepeatModeler**                                 | **RepeatExplorer**                                  |
-| ----------------------- | ------------------------------------------------- | --------------------------------------------------- |
-| **First release**       | \~2008–2009 (RepeatModeler 1), RM2 in 2020        | \~2013 (TAREAN added in 2017)                       |
-| **Developed by**        | Institute for Systems Biology (ISB)               | Institute of Plant Molecular Biology, Czech Academy |
-| **Notable strength**    | Gold standard for de novo repeat library building | Best for repeat profiling in unassembled genomes    |
-| **Scalability**         | Works well on complete genomes                    | Ideal for **low-coverage surveys**, fast to run     |
-| **Graph-based novelty** | ❌ Traditional homology/structure based            | ✅ Graph-based clustering is a key innovation        |
-
----
-
-## ✅ ADVANTAGES AND ❌ DISADVANTAGES
-
-### 🔹 **RepeatModeler**
-
-**Advantages:**
-
-* Works on complete assemblies
-* High-quality consensus sequences
-* Integrates well with RepeatMasker
-* Broad repeat classification
-
-**Disadvantages:**
-
-* Requires a full genome assembly
-* Doesn’t quantify genome proportion
-* No visualization or tandem repeat-specific features
-
----
-
-### 🔸 **RepeatExplorer**
-
-**Advantages:**
-
-* Works directly on raw reads (no assembly required)
-* Estimates abundance of repeat families
-* Graph-based clustering reveals relationships
-* TAREAN module gives rich satellite repeat analysis
-* Interactive HTML reports for exploration
-
-**Disadvantages:**
-
-* Doesn’t produce a masked genome
-* Not designed for building full repeat libraries for RepeatMasker
-* Slower on huge datasets or very complex genomes
-
----
-
-## 🧠 Summary
-
-| Use Case                                     | Recommended Tool          |
-| -------------------------------------------- | ------------------------- |
-| You have an **assembled genome**             | ✅ RepeatModeler           |
-| You have only **reads / no assembly**        | ✅ RepeatExplorer          |
-| You need a **RepeatMasker-ready library**    | ✅ RepeatModeler           |
-| You want **repeat quantification**           | ✅ RepeatExplorer          |
-| You’re studying **tandem/satellite repeats** | ✅ RepeatExplorer (TAREAN) |
-| You want **graph-based visualization**       | ✅ RepeatExplorer          |
-
----
+Overlapping sequence length (nt): 144,069,582 (144,069,582/144,134,966)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence TotalRepeats: Sequence coverage by repeats = 11.53
+(2) ./wmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequenc
+(1) Masked (nt): 29,854,361 : 20.72%
+(2) Masked (nt): 36,712,479 : 25.47%
+Overlapping masking (nt): 17,682,224 : 48.16%
+Overlapping coverage at sequence level = 12.27%
+(1) Different mask not overlap (nt): 12,172,137 : 40.77%
+(2) Different mask not overlap (nt): 19,030,255 : 51.84%
+144,069,582	20.72	25.47	48.16	12.27	40.77	51.84
+```
