@@ -243,3 +243,8 @@ Here’s a comprehensive comparison between **RepeatModeler** and **RepeatExplor
 | You want **graph-based visualization**       | ✅ RepeatExplorer          |
 
 ---
+
+Main metrics from RepeatModeler’s benchmarking:
+Runtime
+ratio of families found to total sequences in the library, indicating less fragmentation and redundancy.
+Comparison of family quality (perfect, good, present, not found)
