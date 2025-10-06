@@ -110,6 +110,17 @@ trimmomatic PE -threads 8 -phred33 \
   LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 CROP:120 MINLEN:120
 ```
 
+Fixing heap problem:
+```bash
+trimmomatic -Xms16g -Xmx24g PE -threads 24 -phred33 \
+  SRR29479670_1.fastq.gz SRR29479670_2.fastq.gz \
+  R1_clean.fastq.gz R1_unpaired.fastq.gz \
+  R2_clean.fastq.gz R2_unpaired.fastq.gz \
+  ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True \
+  LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 CROP:120 MINLEN:120 \
+  -summary trim_summary.txt
+```
+
 ```output
 ILLUMINACLIP: Using adapter file from Trimmomatic installation folder: /home/aygera/miniconda3/envs/bioinfo/share/trimmomatic-0.40-0/adapters/TruSeq3-PE.fa
 Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
