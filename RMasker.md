@@ -38,9 +38,18 @@ perl ./configure
 ```
 
 For installation it asks
-- folder with fdam library (may find automatically) - Libraries
-- TRF executable (if it doesn't see it need to chmod +X it) - ../trf409.legacylinux64
-- Rmblast address (specifically in the bin of it) - ../rmblast-2.14.1+-x64-linux/rmblast-2.14.1/bin/
+- folder with fdam library (may find automatically)
+```bash
+Libraries
+```
+- TRF executable (if it doesn't see it need to chmod +X it) -
+```bash
+../trf409.legacylinux64
+```
+- Rmblast address (specifically in the bin of it)
+```bash
+../rmblast-2.14.1+-x64-linux/rmblast-2.14.1/bin/
+```
 
 After I did that it should work fine. I added it to path. Let's test:
 ```bash
