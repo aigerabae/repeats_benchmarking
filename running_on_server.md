@@ -43,3 +43,23 @@ I tried installing GLIBC 2.33 with conda
 ```bash
 conda install vikky34v::glibc
 ```
+
+And now
+```bash
+ldd --version
+```
+
+Gives: ldd (GNU libc) 2.33
+
+But RepeatMasker still doesn't run, now with a different error:
+(biostar) prom@PCA100416:/data/rkalendar/tests$ RepeatMasker 13.txt 
+RepeatMasker version 4.2.1
+Search Engine: NCBI/RMBLAST [ /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.33' not found (required by /data/rkalendar/soft/tools/RepeatMasker/rmblast-2.14.1+-x64-linux/rmblast-2.14.1/bin/rmblastn) ]
+Could not execute famdb.py using: /data/rkalendar/soft/tools/RepeatMasker/RepeatMasker/famdb.py -i /data/rkalendar/soft/tools/RepeatMasker/RepeatMasker/Libraries/famdb info 
+
+I attempted to fix this problem by going to that folder and 
+```bash
+chmod +x famdb.py
+```
+
+But it didn't work.
