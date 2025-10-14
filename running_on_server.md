@@ -63,3 +63,8 @@ chmod +x famdb.py
 ```
 
 But it didn't work.
+I will try installing rmblastn via conda and pointing to it during configuration:
+conda install -c bioconda -c conda-forge rmblast=2.13.0
+
+Now configure script doesn't work. 
+/data/conda/envs/biostar/bin/rmblastn
