@@ -68,3 +68,25 @@ conda install -c bioconda -c conda-forge rmblast=2.13.0
 
 Now configure script doesn't work. 
 /data/conda/envs/biostar/bin/rmblastn
+
+2 options:
+1) use their docker
+docker pull quay.io/biocontainers/repeatmasker:<tag>
+I can't find the tag for it. There are docker images for it online though they are not from the developers:
+- https://hub.docker.com/r/pegi3s/repeat_masker
+- https://quay.io/repository/biocontainers/repeatmasker
+2) create my own container
+```bash
+mkdir my-docker-project & cd my-docker-project
+touch Dockerfile
+nano Dockerfile
+```
+
+```Dockerfile
+FROM ubuntu:24.04 AS builder
+RUN apt-get update && apt-get install python3-pip
+```
+
+```bash
+docker build -t my-docker-image .
+```
