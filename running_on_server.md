@@ -141,3 +141,5 @@ done
 ```
 
 Waiting now. There is 1 folder old_test that contains oprevious results (on 13.txt), ignore it!
+14 october 16:05 to 16 october 06:26 = 
+6.26 + 7.55 = 14.21 + 24 = 38 hours 21 mins
