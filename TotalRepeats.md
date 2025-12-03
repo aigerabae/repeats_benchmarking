@@ -139,7 +139,7 @@ Running on new data:
 java -jar ~/biostar/RN/repeats_benchmarking/tools/TotalRepeats/dist/TotalRepeats.jar a4_assembly.fna -combine -Xms20g -Xmx24g
 ```
 
-Time: 203 seconds (3 mins 23 secs) (old verison of TR); 
+Time: 203 seconds (3 mins 23 secs) (old verison of TR); 421 seconds (7 mins)
 
 Combining masked files into 1:
 ```bash
