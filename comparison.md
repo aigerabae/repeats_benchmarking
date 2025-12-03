@@ -15,7 +15,7 @@ rmodeler.msk  wmasker.msk
 ```
 
 ```bash
-java -jar TotalRepeats.jar runfiles.txt -maskscomp
+java -jar ~/biostar/RN/repeats_benchmarking/tools/TotalRepeats/dist/TotalRepeats.jar runfiles.txt -maskscomp > result.txt
 ```
 
 Checking if names of sequences are the same:
@@ -140,6 +140,131 @@ Sequence length (nt): 144,134,966
 (2) Masked (nt): 36,769,731 : 25.51%
 Overlapping masking (nt): 20,992,025 : 57.09%
 Overlapping coverage at sequence level = 14.56%
+
+
+
+New results (only sees 45 mln/145 mln bases for all of them):
+Overlapping sequence length (nt): 23,611,144 (47,396,754/47,396,717)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotFiles processed successfully.
+uence coverage by repeats = 13.37%
+(2) ./rexplorer.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,484,224 : 7.35%
+(2) Masked (nt): 3,984,229 : 8.41%
+Overlapping masking (nt): 2,739,877 : 68.77%
+Overlapping coverage at sequence level = 11.60%
+(1) Different mask not overlap (nt): 744,347 : 21.36%
+(2) Different mask not overlap (nt): 1,244,352 : 31.23%
+23611144	3484224	3984229	2739877	744347	1244352
+
+
+Overlapping sequence length (nt): 23,611,144 (47,396,754/47,396,717)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence TotalRepeats: Sequence coverage by repeats = 13.37%
+(2) ./rmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,484,224 : 7.35%
+(2) Masked (nt): 3,871,428 : 8.17%
+Overlapping masking (nt): 2,619,385 : 67.66%
+Overlapping coverage at sequence level = 11.09%
+(1) Different mask not overlap (nt): 864,839 : 24.82%
+(2) Different mask not overlap (nt): 1,252,043 : 32.34%
+23611144	3484224	3871428	2619385	864839	1252043
+
+
+Overlapping sequence length (nt): 23,611,144 (47,396,754/47,396,717)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence TotalRepeats: Sequence coverage by repeats = 13.37%
+(2) ./rmodeler.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,484,224 : 7.35%
+(2) Masked (nt): 3,976,084 : 8.39%
+Overlapping masking (nt): 2,725,564 : 68.55%
+Overlapping coverage at sequence level = 11.54%
+(1) Different mask not overlap (nt): 758,660 : 21.77%
+(2) Different mask not overlap (nt): 1,250,520 : 31.45%
+23611144	3484224	3976084	2725564	758660	1250520
+
+
+Overlapping sequence length (nt): 23,611,144 (47,396,754/47,396,717)
+(1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence TotalRepeats: Sequence coverage by repeats = 13.37%
+(2) ./wmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,484,224 : 7.35%
+(2) Masked (nt): 5,445,861 : 11.49%
+Overlapping masking (nt): 2,041,597 : 37.49%
+Overlapping coverage at sequence level = 8.65%
+(1) Different mask not overlap (nt): 1,442,627 : 41.40%
+(2) Different mask not overlap (nt): 3,404,264 : 62.51%
+23611144	3484224	5445861	2041597	1442627	3404264
+
+
+Sequence length (nt): 23,611,144
+(1) ./rexplorer.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(2) ./rmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,984,229 : 8.41%
+(2) Masked (nt): 3,871,428 : 8.17%
+Overlapping masking (nt): 3,715,454 : 93.25%
+Overlapping coverage at sequence level = 15.74%
+(1) Different mask not overlap (nt): 268,775 : 6.75%
+(2) Different mask not overlap (nt): 155,974 : 4.03%
+23611144	3984229	3871428	3715454	268775	155974
+
+
+Sequence length (nt): 23,611,144
+(1) ./rexplorer.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(2) ./rmodeler.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,984,229 : 8.41%
+(2) Masked (nt): 3,976,084 : 8.39%
+Overlapping masking (nt): 3,812,067 : 95.68%
+Overlapping coverage at sequence level = 16.15%
+(1) Different mask not overlap (nt): 172,162 : 4.32%
+(2) Different mask not overlap (nt): 164,017 : 4.13%
+23611144	3984229	3976084	3812067	172162	164017
+
+
+Sequence length (nt): 23,611,144
+(1) ./rexplorer.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(2) ./wmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,984,229 : 8.41%
+(2) Masked (nt): 5,445,861 : 11.49%
+Overlapping masking (nt): 2,447,916 : 44.95%
+Overlapping coverage at sequence level = 10.37%
+(1) Different mask not overlap (nt): 1,536,313 : 38.56%
+(2) Different mask not overlap (nt): 2,997,945 : 55.05%
+23611144	3984229	5445861	2447916	1536313	2997945
+
+
+Sequence length (nt): 23,611,144
+(1) ./rmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(2) ./rmodeler.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,871,428 : 8.17%
+(2) Masked (nt): 3,976,084 : 8.39%
+Overlapping masking (nt): 3,753,014 : 94.39%
+Overlapping coverage at sequence level = 15.90%
+(1) Different mask not overlap (nt): 118,414 : 3.06%
+(2) Different mask not overlap (nt): 223,070 : 5.61%
+23611144	3871428	3976084	3753014	118414	223070
+
+
+Sequence length (nt): 23,611,144
+(1) ./rmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(2) ./wmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,871,428 : 8.17%
+(2) Masked (nt): 5,445,861 : 11.49%
+Overlapping masking (nt): 2,299,617 : 42.23%
+Overlapping coverage at sequence level = 9.74%
+(1) Different mask not overlap (nt): 1,571,811 : 40.60%
+(2) Different mask not overlap (nt): 3,146,244 : 57.77%
+23611144	3871428	5445861	2299617	1571811	3146244
+
+
+Sequence length (nt): 23,611,144
+(1) ./rmodeler.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(2) ./wmasker.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotgun sequence
+(1) Masked (nt): 3,976,084 : 8.39%
+(2) Masked (nt): 5,445,861 : 11.49%
+Overlapping masking (nt): 2,411,783 : 44.29%
+Overlapping coverage at sequence level = 10.21%
+(1) Different mask not overlap (nt): 1,564,301 : 39.34%
+(2) Different mask not overlap (nt): 3,034,078 : 55.71%
+23611144	3976084	5445861	2411783	1564301	3034078
+
+
 (1) Different mask not overlap (nt): 13,024,883 : 38.29%
 (2) Different mask not overlap (nt): 15,777,706 : 42.91%
 144,134,966	23.60	25.51	57.09	14.56	38.29	42.91
