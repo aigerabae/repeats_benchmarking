@@ -141,9 +141,14 @@ Sequence length (nt): 144,134,966
 Overlapping masking (nt): 20,992,025 : 57.09%
 Overlapping coverage at sequence level = 14.56%
 
+(1) Different mask not overlap (nt): 13,024,883 : 38.29%
+(2) Different mask not overlap (nt): 15,777,706 : 42.91%
+144,134,966	23.60	25.51	57.09	14.56	38.29	42.91
+```
 
 
 New results (only sees 45 mln/145 mln bases for all of them):
+```text
 Overlapping sequence length (nt): 23,611,144 (47,396,754/47,396,717)
 (1) ./tr.msk : CM008268.1 Drosophila melanogaster strain A4 chromosome X, whole genome shotFiles processed successfully.
 uence coverage by repeats = 13.37%
@@ -263,9 +268,4 @@ Overlapping coverage at sequence level = 10.21%
 (1) Different mask not overlap (nt): 1,564,301 : 39.34%
 (2) Different mask not overlap (nt): 3,034,078 : 55.71%
 23611144	3976084	5445861	2411783	1564301	3034078
-
-
-(1) Different mask not overlap (nt): 13,024,883 : 38.29%
-(2) Different mask not overlap (nt): 15,777,706 : 42.91%
-144,134,966	23.60	25.51	57.09	14.56	38.29	42.91
 ```
