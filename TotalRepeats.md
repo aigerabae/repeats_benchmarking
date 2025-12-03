@@ -130,16 +130,16 @@ Output:
   
 ### Chapter 2: drosophila:
 ```bash
-java -jar TotalRepeats.jar ../seqs/GCA_042606445.1_ASM4260644v1_genomic.fna
+java -jar ~/biostar/RN/repeats_benchmarking/tools/TotalRepeats/dist/TotalRepeats.jar ../seqs/GCA_042606445.1_ASM4260644v1_genomic.fna
 ```
 This generates 221 contigs and so 221 separate files. If i decide to use that dataset i would have to find  way to combine those results otgether. or i coudl use a diifferent dataset with better assembly
 
 Running on new data:
 ```bash
-java -jar TotalRepeats.jar a4_assembly.fna -combine
+java -jar ~/biostar/RN/repeats_benchmarking/tools/TotalRepeats/dist/TotalRepeats.jar a4_assembly.fna -combine -Xms20g -Xmx24g
 ```
 
-Time: 203 seconds (3 mins 23 secs)
+Time: 203 seconds (3 mins 23 secs) (old verison of TR); 
 
 Combining masked files into 1:
 ```bash
